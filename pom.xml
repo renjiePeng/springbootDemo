@@ -7,6 +7,11 @@
     <modules>
         <module>securitydemo1</module>
         <module>computerBase</module>
+        <module>redisDemo</module>
+        <module>MyTest</module>
+        <module>swagger-common</module>
+        <module>nacos-common</module>
+        <!--        <module>base</module>-->
     </modules>
 
     <parent>
@@ -20,13 +25,40 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <mybatis-version>1.3.4</mybatis-version>
+        <mybatis-version>2.1.4</mybatis-version>
+        <nacos.cloud.discovery.version>2021.0.1.0</nacos.cloud.discovery.version>
+        <spring.cloud.dependencies.version>2021.0.1</spring.cloud.dependencies.version>
     </properties>
 
     <dependencies>
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-dependencies</artifactId>-->
+<!--            <version>${spring.cloud.dependencies.version}</version>-->
+<!--        </dependency>-->
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>${nacos.cloud.discovery.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${nacos.cloud.discovery.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>nacos-config-spring-boot-starter</artifactId>
+            <version>0.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
 
 <!--        <dependency>-->

@@ -1,2 +1,14 @@
 server:
-  port: 8080
+  port: 8081
+spring:
+  application:
+    name: securityDemo1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.64:8848
+        namespace: 956282f3-d9c9-498f-a5c4-328a3b944f62
+      config:
+        server-addr: 192.168.2.64:8848
+        namespace: 956282f3-d9c9-498f-a5c4-328a3b944f62
+        file-extension: yaml
