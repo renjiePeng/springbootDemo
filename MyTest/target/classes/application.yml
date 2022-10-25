@@ -1,0 +1,22 @@
+server:
+  port: 8083
+  servlet:
+    context-path: /myTest
+spring:
+  application:
+    name: myTest
+  redis:
+    host: 192.168.1.204
+    port: 6379
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.2.76:8848
+        namespace: 956282f3-d9c9-498f-a5c4-328a3b944f62
+        group: my
+      config:
+        server-addr: 192.168.2.76:8848
+        namespace: 956282f3-d9c9-498f-a5c4-328a3b944f62
+        file-extension: yaml
+        group: my
+

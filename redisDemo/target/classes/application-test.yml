@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: demo
+  redis:
+    host: 192.168.1.204
+    port: 6379
+str: 1223
+
+knife4j:
+  enable: true
+
+swagger:
+  title: redis服务
+
+#nacos:
+#  config:
+#    server-addr: 192.168.2.64:8848
