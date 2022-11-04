@@ -3,6 +3,9 @@ server:
   servlet:
     context-path: /myTest
 spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
   application:
     name: myTest
   redis:
@@ -19,4 +22,5 @@ spring:
         namespace: 956282f3-d9c9-498f-a5c4-328a3b944f62
         file-extension: yaml
         group: my
-
+swagger:
+  title: 测试

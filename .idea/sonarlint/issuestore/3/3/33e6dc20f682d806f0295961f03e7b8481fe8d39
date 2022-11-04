@@ -1,0 +1,6 @@
+
+T	java:S106!"9Replace this use of System.out or System.err by a logger.(ƒÚáB8‚ş€ïÀ0
+]	java:S125 "<This block of commented-out lines of code should be removed.(É°®Âùÿÿÿÿ8ƒş€ïÀ0
+W	java:S125""<This block of commented-out lines of code should be removed.(¹Ñš[8ƒş€ïÀ0
+p
+java:S1128"NRemove this unused import 'org.springframework.data.redis.core.RedisTemplate'.(–ª¡Çøÿÿÿÿ8„ş€ïÀ0

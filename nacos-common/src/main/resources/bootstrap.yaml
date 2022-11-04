@@ -13,5 +13,6 @@ spring:
         file-extension: yaml
         group: my
         refresh-enabled: true
+    #版本兼容设置
     compatibility-verifier:
       enabled: true

@@ -11,6 +11,8 @@
         <module>MyTest</module>
         <module>swagger-common</module>
         <module>nacos-common</module>
+        <module>java8Demo</module>
+        <module>spring-validation-demo</module>
         <!--        <module>base</module>-->
     </modules>
 
@@ -28,6 +30,7 @@
         <mybatis-version>2.1.4</mybatis-version>
         <nacos.cloud.discovery.version>2021.0.1.0</nacos.cloud.discovery.version>
         <spring.cloud.dependencies.version>2021.0.1</spring.cloud.dependencies.version>
+        <fastJson.version>1.2.70</fastJson.version>
     </properties>
 
     <dependencies>
@@ -38,28 +41,36 @@
 <!--            <version>${spring.cloud.dependencies.version}</version>-->
 <!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-            <version>${nacos.cloud.discovery.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>-->
+<!--            <version>${nacos.cloud.discovery.version}</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>${nacos.cloud.discovery.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
+<!--            <version>${nacos.cloud.discovery.version}</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>com.alibaba.boot</groupId>
-            <artifactId>nacos-config-spring-boot-starter</artifactId>
-            <version>0.2.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.boot</groupId>-->
+<!--            <artifactId>nacos-config-spring-boot-starter</artifactId>-->
+<!--            <version>0.2.1</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastJson.version}</version>
+        </dependency>
+
+
 
 <!--        <dependency>-->
 <!--            <groupId>org.mybatis.spring.boot</groupId>-->

@@ -49,7 +49,7 @@ public class SwaggerConfig {
     /**
      * Swagger扫描的接口路径
      */
-    public static String CONTROLLER_URL="com.piesat";
+    public static String CONTROLLER_URL="com.prj";
     /**
      * Swagger接口文档标题
      */
