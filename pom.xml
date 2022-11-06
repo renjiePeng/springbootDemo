@@ -13,7 +13,7 @@
         <module>nacos-common</module>
         <module>java8Demo</module>
         <module>spring-validation-demo</module>
-        <!--        <module>base</module>-->
+        <module>base</module>
     </modules>
 
     <parent>

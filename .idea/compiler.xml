@@ -14,12 +14,14 @@
         <module name="MyTest" />
         <module name="java8Demo" />
         <module name="redisDemo" />
+        <module name="base" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="MyTest" options="-parameters" />
+      <module name="base" options="-parameters" />
       <module name="computerBase" options="-parameters" />
       <module name="java8Demo" options="-parameters" />
       <module name="nacos-common" options="-parameters" />
