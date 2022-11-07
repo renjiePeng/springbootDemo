@@ -1,8 +1,6 @@
 
 {
 Ksecuritydemo1/src/main/java/com/prj/controller/SecurityDemo1Controller.java,2\0\2024f9ae8ed1f9a9a45006fb2392aab290c3f417
-G
-redisDemo/redisDemo.iml,6\a\6a5f3c1ed5a73692a47b773132bd30611cf0c91e
 O
 securitydemo1/securitydemo1.iml,f\5\f5b563c123c228127f42beb4b4a6a0ff3a02c7f8
 M
@@ -11,14 +9,10 @@ m
 =MyTest/src/main/java/com/prj/listener/OrderEventListener.java,0\a\0a827eee323e31fba6c27ce1365f172127978d2f
 n
 >MyTest/src/main/java/com/prj/publisher/DemoEventPublisher.java,8\5\85bb50d32216a69de943d4e34c5e3b32b377b148
-A
-MyTest/MyTest.iml,d\4\d472d894db72fa13b1c22949bc375a345f43bb59
 b
 2MyTest/src/main/java/com/prj/event/OrderEvent.java,a\4\a4397cf53c5bc43778b27de9d50a7be7b5b7ae11
 d
 4MyTest/src/main/java/com/prj/config/EventConfig.java,a\0\a0c33ffdc5d5cd725948e030938a2288faa63d1b
-Q
-!swagger-common/swagger-common.iml,a\a\aa416439c4e8fec24b3d6d7faaa3783d34514ec1
 \
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 g
@@ -43,18 +37,12 @@ c
 3MyTest/src/main/java/com/prj/MyTestApplication.java,d\7\d70385f2483e08edb2501081226341d16507d807
 p
 @MyTest/src/main/java/com/prj/controller/PublisherController.java,0\c\0cc346fcd4f1e7e98afdb8cef70a4c53b5d3af42
-a
-1spring-validation-demo/spring-validation-demo.iml,9\5\95a4b6f5433d1942c8c76a2ab0b0e604951e6070
 b
 2MyTest/src/main/java/com/prj/pojo/entity/User.java,d\7\d7d07fc5b75e1a68993316074729a33e73bee936
->
-MyTest/pom.xml,4\1\410ce88c1f96588748d5037da1675a88f9737368
 q
 Asecuritydemo1/src/main/java/com/prj/SecurityDemo1Application.java,c\2\c2c98db16807ecabab60ada1772f59fa7adbe169
 n
 >swagger-common/src/main/java/com/prj/config/SwaggerConfig.java,1\d\1d95fe7c2bd5d1d30eb9a6722449e3dfa798e541
-G
-java8Demo/java8Demo.iml,7\8\78e39ea113b656dcbaac5fc6d06a4ee61c900304
 e
 5MyTest/src/main/java/com/prj/config/MyDateFormat.java,9\1\918514046aae2f89110f35050ccc27610003d874
 D

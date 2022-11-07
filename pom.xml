@@ -14,6 +14,7 @@
         <module>java8Demo</module>
         <module>spring-validation-demo</module>
         <module>base</module>
+        <module>springboot-source-analysis</module>
     </modules>
 
     <parent>
