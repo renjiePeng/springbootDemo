@@ -27,12 +27,8 @@ g
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 o
 ?redisDemo/src/main/java/com/prj/controller/RedisController.java,3\3\33e6dc20f682d806f0295961f03e7b8481fe8d39
-i
-9redisDemo/src/main/java/com/prj/RedisDemoApplication.java,b\c\bcc303b337840100fe32c14cdf90c5b20c1ff438
 E
 securitydemo1/pom.xml,3\7\37fa530f213ce614269f832dc26f819c1c8dc2ed
-A
-redisDemo/pom.xml,7\a\7adb6399e9ad9cf312b83ce35449822eba7f7f91
 D
 computerBase/pom.xml,d\e\deb29c7b0a3b6e7b90c527fef7ce0d4a714d8cc3
 Z
@@ -55,8 +51,6 @@ G
 java8Demo/java8Demo.iml,7\8\78e39ea113b656dcbaac5fc6d06a4ee61c900304
 e
 5MyTest/src/main/java/com/prj/config/MyDateFormat.java,9\1\918514046aae2f89110f35050ccc27610003d874
-D
-nacos-common/pom.xml,4\f\4f9e6ffbfe4fad6242ea8ca4758c314fee802193
 F
 swagger-common/pom.xml,9\a\9af82d01526c237e9dc2daa07257a61796a84adb
 e
@@ -117,3 +111,5 @@ Cbase/src/main/java/com/piesat/exception/GlobalExceptionHandler.java,e\0\e0582c
 base/base.iml,7\b\7b1524451eb03acc91c0180dc96e8a91112f7cb1
 <
 base/pom.xml,6\9\6938ebfea762ce0c7ba0c2da2004eb53baa6e9a4
+‚
+Rspring-validation-demo/src/main/java/com/prj/exception/CommonExceptionHandler.java,b\2\b20555472b32e1a6f7a33e382cf8b559ee6d2a19
