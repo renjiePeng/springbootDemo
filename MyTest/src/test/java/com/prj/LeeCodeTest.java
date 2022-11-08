@@ -32,6 +32,103 @@ public class LeeCodeTest {
         System.out.println(isPalindrome2(num));
     }
 
+    /**
+     * 罗马数字转换
+     */
+    @Test
+    public void test3() {
+        String s = "XLIX";
+        System.out.println(romanToInt(s));
+    }
+
+    @Test
+    public void test4() {
+        String[] strs = {"a"};
+        System.out.println(longestCommonPrefix(strs));
+    }
+
+    /**
+     * 1、判断原始数组不为null且长度必须大于0；
+     * 2、获取数组第一个元素
+     * 3、再挨个遍历每个单词，与后面的元素用startWith判断是否为开头
+     * 4、如果都是以该单词开头的，添加到缓存中，否则return。
+     * @param strs 原始数据
+     * @return 公共前缀
+     */
+    public String longestCommonPrefix(String[] strs) {
+        if (Objects.nonNull(strs) && strs.length == 0) {
+            return "";
+        }
+        String cacheStr = "";
+        String firstStr = strs[0];
+        if(strs.length==1){
+            return strs[0];
+        }
+        for (int i = 0; i < firstStr.length(); i++) {
+            String prefix = String.valueOf(firstStr.charAt(i));
+            if (prefix.length() > 0) {
+                prefix = cacheStr + prefix;
+            }
+            for (int y = 1; y < strs.length; y++) {
+                if (strs[y].startsWith(prefix)) {
+                    if (strs.length - 1 == y) {
+                        cacheStr = prefix;
+                    }
+                } else {
+                    return cacheStr;
+                }
+            }
+
+        }
+        return cacheStr;
+    }
+
+    public int romanToInt(String s) {
+        s = s.replace("IV", "a");
+        s = s.replace("IX", "b");
+        s = s.replace("XL", "c");
+        s = s.replace("XC", "d");
+        s = s.replace("CD", "e");
+        s = s.replace("CM", "f");
+
+        int res = 0;
+        for (int i = 0; i < s.length(); i++) {
+            res += getValue(s.charAt(i));
+        }
+        return res;
+    }
+
+    private int getValue(char c) {
+        switch (c) {
+            case 'I':
+                return 1;
+            case 'V':
+                return 5;
+            case 'X':
+                return 10;
+            case 'L':
+                return 50;
+            case 'C':
+                return 100;
+            case 'D':
+                return 500;
+            case 'M':
+                return 1000;
+            case 'a':
+                return 4;
+            case 'b':
+                return 9;
+            case 'c':
+                return 40;
+            case 'd':
+                return 90;
+            case 'e':
+                return 400;
+            case 'f':
+                return 900;
+        }
+        return 0;
+    }
 
     public boolean isPalindrome(int x) {
         String str = String.valueOf(x);
@@ -73,7 +170,7 @@ public class LeeCodeTest {
         int length = chars.length / 2;
         for (int i = 0; i < length; i++) {
             int currentChar = chars[i];
-            if(currentChar==chars[chars.length-i-1]){
+            if (currentChar == chars[chars.length - i - 1]) {
                 continue;
             }
             return false;
