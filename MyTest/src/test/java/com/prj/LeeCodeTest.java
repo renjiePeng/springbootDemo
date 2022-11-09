@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * @className: com.prj.Test
@@ -41,10 +42,118 @@ public class LeeCodeTest {
         System.out.println(romanToInt(s));
     }
 
+    /**
+     * 最长公共前缀
+     */
     @Test
     public void test4() {
         String[] strs = {"a"};
         System.out.println(longestCommonPrefix(strs));
+    }
+
+    /**
+     * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
+     */
+    @Test
+    public void test5() {
+        String s = "{";
+        System.out.println(isValid(s));
+    }
+
+    public boolean isValid(String s){
+        if(s.length()%2!=0){
+            return false;
+        }
+
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if(c=='('){
+                stack.push(')');
+            }else if(c=='['){
+                stack.push(']');
+            }else if(c=='{'){
+                stack.push('}');
+            }else if(stack.isEmpty() || c!=stack.pop()){
+                return false;
+            }
+        }
+        return stack.isEmpty();
+    }
+
+    public boolean isValid2(String s) {
+        if(s.length()==0){
+            return true;
+        }
+
+        if(s.length()==1){
+            return false;
+        }
+
+        boolean flag = true;
+        char lastChar = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+            if(i>0) {
+                lastChar = s.charAt(i-1);
+            }
+            switch (currentChar){
+                case '(':
+                case '[':
+                case '{':
+                    flag = false;
+                    break;
+                case ')':
+                    if(lastChar=='(') {
+                        flag = true;
+                    }
+                    break;
+                case ']':
+                    if(lastChar=='[') {
+                        flag = true;
+                    }
+                    break;
+                case '}':
+                    if(lastChar=='{') {
+                        flag = true;
+                    }
+                    break;
+            }
+        }
+        return flag;
+    }
+
+    public boolean isValid1(String s) {
+        if(s.length()==0){
+            return true;
+        }
+
+        int leftSmailsymbol = 0;
+        int leftmediumsymbol = 0;
+        int leftBigsymbol = 0;
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+            switch (currentChar){
+                case '(':
+                    leftSmailsymbol+=1;
+                    break;
+                case '[':
+                    leftmediumsymbol+=1;
+                    break;
+                case '{':
+                    leftBigsymbol+=1;
+                    break;
+                case ')':
+                    leftSmailsymbol-=1;
+                    break;
+                case ']':
+                    leftmediumsymbol-=1;
+                    break;
+                case '}':
+                    leftBigsymbol-=1;
+                    break;
+            }
+        }
+        return leftSmailsymbol == 0 && leftmediumsymbol == 0 && leftBigsymbol == 0;
     }
 
     /**
