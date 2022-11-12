@@ -64,7 +64,8 @@ public class PublisherController {
 
     @ApiOperation("/新增用户信息--get")
     @PostMapping("/insertUser")
-    public Object insertUser(@RequestParam("user") User user){
+    public Object insertUser(@RequestParam String name,@RequestParam Integer age){
+        User user = new User(name, age, new Date());
         System.out.println(user.toString());
         return user;
     }
@@ -79,6 +80,20 @@ public class PublisherController {
     @ApiOperation("/获取所有的用户信息")
     @PostMapping("/getAllUser")
     public Object getAllUser(@RequestBody UserDTO userDTO){
+        String toJSONString = JSON.toJSONString(userDTO);
+        UserBO userBO = JSON.parseObject(toJSONString, UserBO.class);
+        System.out.println(JSON.toJSONString(userBO));
+        return userBO;
+    }
+
+    @ApiOperation("/新增用户DTO信息")
+    @PostMapping("/insertUserDto")
+    public Object insertUserDto(@RequestParam String time,@RequestParam String version, @RequestParam Integer age){
+        UserDTO userDTO = new UserDTO();
+        userDTO.setDate(new Date());
+        userDTO.setTime(time);
+        userDTO.setAge(age);
+        userDTO.setVersion(version);
         String toJSONString = JSON.toJSONString(userDTO);
         UserBO userBO = JSON.parseObject(toJSONString, UserBO.class);
         System.out.println(JSON.toJSONString(userBO));

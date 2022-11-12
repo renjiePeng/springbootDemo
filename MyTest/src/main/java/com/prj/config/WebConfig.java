@@ -1,5 +1,6 @@
 package com.prj.config;
 
+import com.prj.convert.TimeStrConvert;
 import com.prj.convert.UserConvert;
 import com.prj.convert.UserDTOConvert;
 import com.prj.interceptor.JsonInterceptor;
@@ -33,6 +34,9 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Resource
     private UserConvert userConvert;
+
+    @Resource
+    private TimeStrConvert timeStrConvert;
 
 //    @Bean
 //    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(){
@@ -79,5 +83,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void addFormatters(FormatterRegistry registry) {
         registry.addConverter(userDTOConvert);
         registry.addConverter(userConvert);
+        registry.addConverter(timeStrConvert);
     }
 }
