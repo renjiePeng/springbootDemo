@@ -1,27 +1,17 @@
 package com.prj.config;
 
-import com.alibaba.fastjson.support.config.FastJsonConfig;
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.prj.convert.UserConvert;
+import com.prj.convert.UserDTOConvert;
 import com.prj.interceptor.JsonInterceptor;
-import com.prj.interceptor.StringToDateFormatter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+import javax.annotation.Resource;
 import java.util.List;
-
-import static com.alibaba.fastjson.serializer.SerializerFeature.WriteDateUseDateFormat;
-import static com.alibaba.fastjson.serializer.SerializerFeature.WriteNullStringAsEmpty;
 
 /**
  * @className: com.prj.config.WebConfig
@@ -37,6 +27,12 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
     private JsonInterceptor interceptor;
+
+    @Resource
+    private UserDTOConvert userDTOConvert;
+
+    @Resource
+    private UserConvert userConvert;
 
 //    @Bean
 //    public MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter(){
@@ -77,5 +73,11 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加拦截器，配置拦截地址
         registry.addInterceptor(interceptor);
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(userDTOConvert);
+        registry.addConverter(userConvert);
     }
 }
