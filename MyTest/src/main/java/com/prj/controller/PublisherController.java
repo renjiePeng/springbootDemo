@@ -3,6 +3,8 @@ package com.prj.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.prj.event.OrderEvent;
+import com.prj.pojo.bo.UserBO;
+import com.prj.pojo.dto.UserDTO;
 import com.prj.pojo.entity.User;
 import com.prj.publisher.DemoEventPublisher;
 import io.swagger.annotations.Api;
@@ -58,6 +60,44 @@ public class PublisherController {
         return JSON.toJSONStringWithDateFormat(
                 users,"yyyy-MM-dd HH:mm:ss", SerializerFeature.WriteDateUseDateFormat
         );
+    }
+
+    @ApiOperation("/新增用户信息--get")
+    @PostMapping("/insertUser")
+    public Object insertUser(@RequestParam String name,@RequestParam Integer age){
+        User user = new User(name, age, new Date());
+        System.out.println(user.toString());
+        return user;
+    }
+
+    @ApiOperation("/新增用户信息--post")
+    @PostMapping("/insertUserForPost")
+    public Object insertUserForPost(@RequestBody User user){
+        System.out.println(user.toString());
+        return user;
+    }
+
+    @ApiOperation("/获取所有的用户信息")
+    @PostMapping("/getAllUser")
+    public Object getAllUser(@RequestBody UserDTO userDTO){
+        String toJSONString = JSON.toJSONString(userDTO);
+        UserBO userBO = JSON.parseObject(toJSONString, UserBO.class);
+        System.out.println(JSON.toJSONString(userBO));
+        return userBO;
+    }
+
+    @ApiOperation("/新增用户DTO信息")
+    @PostMapping("/insertUserDto")
+    public Object insertUserDto(@RequestParam String time,@RequestParam String version, @RequestParam Integer age){
+        UserDTO userDTO = new UserDTO();
+        userDTO.setDate(new Date());
+        userDTO.setTime(time);
+        userDTO.setAge(age);
+        userDTO.setVersion(version);
+        String toJSONString = JSON.toJSONString(userDTO);
+        UserBO userBO = JSON.parseObject(toJSONString, UserBO.class);
+        System.out.println(JSON.toJSONString(userBO));
+        return userBO;
     }
 
     @NotNull
