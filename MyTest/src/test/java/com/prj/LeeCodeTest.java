@@ -1,10 +1,17 @@
 package com.prj;
 
-import org.apache.commons.lang3.StringUtils;
-import org.junit.Test;
+import lombok.Data;
+import org.junit.jupiter.api.Test;
 
-import java.util.*;
-import java.util.regex.Pattern;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Stack;
 
 /**
  * @className: com.prj.Test
@@ -58,6 +65,83 @@ public class LeeCodeTest {
     public void test5() {
         String s = "{";
         System.out.println(isValid(s));
+    }
+
+
+    /**
+     * 考察点：单向链表
+     * 链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。
+     * 链表由一系列节点组成，节点可以在运行时动态生成，节点包括两个部分：一个是存储数据元素的数据域，
+     * 另一个是存储下一个结点地址的指针域。
+     */
+    @Test
+    public void test6(){
+        StudentNode headNode = new StudentNode(0, "");
+
+    }
+
+    @Test
+    public void test7(){
+        long currentTimeMillis = System.currentTimeMillis();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String format1 = LocalDateTime.ofInstant(Instant.ofEpochMilli(currentTimeMillis), ZoneOffset.UTC).format(dateTimeFormatter);
+
+        System.out.println("ZoneOffset.UTC:       "+format1);
+
+        String format2 = LocalDateTime.ofInstant(Instant.ofEpochMilli(currentTimeMillis), ZoneId.of("Asia/Shanghai")).format(dateTimeFormatter);
+
+        System.out.println("ZoneId.systemDefault(): "+format2);
+
+        String format3 = LocalDateTime.ofInstant(Instant.ofEpochMilli(currentTimeMillis), ZoneOffset.of("+8")).format(dateTimeFormatter);
+
+        System.out.println("ZoneOffset.of(\"+8\"):     "+format3);
+    }
+
+    @Test
+    public void test8(){
+
+    }
+
+//    public ListNode mergeTwoLists(ListNode node1, ListNode node2) {
+//        int val = node1.getVal();
+//    }
+
+
+    public void addNodeByIdAsc(StudentNode headNode, StudentNode newStudentNode){
+        StudentNode tmpNode = headNode;
+        while(true){
+            if(Objects.isNull(tmpNode.getNextStudent())){
+                tmpNode.setNextStudent(newStudentNode);
+                break;
+            }
+
+            int newStudentNodeId = newStudentNode.getId();
+            if(tmpNode.getNextStudent().getId() == newStudentNodeId){
+                break;
+            }
+
+            if(tmpNode.getNextStudent().getId()> newStudentNodeId){
+                newStudentNode.setNextStudent(tmpNode.getNextStudent());
+                tmpNode.setNextStudent(newStudentNode);
+                break;
+            }
+            //tmpNode 后移一位
+            tmpNode = tmpNode.getNextStudent();
+        }
+    }
+
+    public void addNodeEnd(StudentNode newStudentNode){
+        StudentNode tmpNode = newStudentNode;
+        while (true){
+            if(Objects.isNull(tmpNode.getNextStudent())){
+                break;
+            }
+            //将tmpNode后移
+            tmpNode = tmpNode.getNextStudent();
+        }
+        //当退出while循环后，tmpNode就指向了链表的最后
+        //将最后这个节点指向新插入的这个节点
+        tmpNode.setNextStudent(newStudentNode);
     }
 
     public boolean isValid(String s){
@@ -340,5 +424,38 @@ public class LeeCodeTest {
             map.put(currentNum, i);
         }
         return result;
+    }
+}
+
+@Data
+class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {
+    }
+
+    ListNode(int val) {
+        this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+@Data
+class StudentNode {
+    private int id;  // 学生id
+    private String name;  // 学生姓名
+    private StudentNode nextStudent;  // 指向下一个学生
+
+    public StudentNode() {
+    }
+
+    public StudentNode(int id, String name) {
+        this.id = id;
+        this.name = name;
     }
 }

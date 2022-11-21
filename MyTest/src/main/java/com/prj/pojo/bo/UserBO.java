@@ -1,14 +1,11 @@
-package com.prj.pojo.entity;
+package com.prj.pojo.bo;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -21,22 +18,16 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserBO {
 
-//    @JsonProperty(value = "named")
+    private String time;
+
+    private String version;
+
     private String name;
 
-    private Integer age;
+    private Integer agE;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date date;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", date=" + date +
-                '}';
-    }
 }
