@@ -15,6 +15,7 @@
         <module>spring-validation-demo</module>
         <module>base</module>
         <module>springboot-source-analysis</module>
+        <module>java-concurrencyin-practice</module>
     </modules>
 
     <parent>

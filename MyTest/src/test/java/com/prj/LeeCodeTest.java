@@ -3,15 +3,14 @@ package com.prj;
 import lombok.Data;
 import org.junit.jupiter.api.Test;
 
+import javax.validation.constraints.NotNull;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Stack;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @className: com.prj.Test
@@ -76,8 +75,157 @@ public class LeeCodeTest {
      */
     @Test
     public void test6(){
-        StudentNode headNode = new StudentNode(0, "");
+        //StudentNode headNode = new StudentNode(0, "");
+        ListNode listNode1 = new ListNode();
+        ListNode listNode2 = new ListNode();
+        ListNode listNode3 = new ListNode();
+        listNode2.setVal(5);
+        listNode3.setVal(3);
+        listNode1.setVal(2);
+        listNode2.setNext(listNode3);
+        listNode1.setNext(listNode2);
 
+
+        ListNode listNode11 = new ListNode();
+        ListNode listNode12 = new ListNode();
+        ListNode listNode13 = new ListNode();
+        listNode12.setVal(7);
+        listNode13.setVal(9);
+        listNode11.setVal(0);
+        listNode12.setNext(listNode13);
+        listNode11.setNext(listNode12);
+
+        ListNode listNode = sortListNode1(listNode1, listNode11);
+        System.out.println(listNode);
+    }
+
+    public int removeDuplicates1(@NotNull int[] nums) {
+        if(nums.length==1){
+            return nums.length;
+        }
+
+        int i = 0;
+        int j = 1;
+        while(j<nums.length){
+            if(nums[i] != nums[j]){
+                i = i +1;
+                nums[i] = nums[j];
+            }
+            j++;
+        }
+        return i+1;
+    }
+
+    /**
+     * 给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 。
+     *
+     * 由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个元素应该保存最终结果。
+     *
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode.cn/problems/remove-duplicates-from-sorted-array
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+    @Test
+    public void test8(){
+        int[] nums = {7,8,8,10,12,13,14,16,16};
+        System.out.println(removeDuplicates1(nums));
+    }
+
+    public int removeDuplicates(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
+        }
+        int i = 0, j = 1;
+        while (j < nums.length) {
+            if (nums[i] != nums[j]) {
+                nums[++i] = nums[j];
+                StringBuilder builder = new StringBuilder();
+                for (int num : nums) {
+                    builder.append(num + ",");
+                }
+                System.out.println(builder.toString());
+            }
+            j++;
+        }
+        return ++i;
+    }
+
+//    public int removeDuplicates(int[] nums) {
+//        if(nums.length==1){
+//            return nums.length;
+//        }
+//
+//        int lastIndex = 0;
+//        int currentIndex = 1;
+//        while (lastIndex<=nums.length-1 && currentIndex<= nums.length-1){
+//            if(nums[lastIndex] == nums[currentIndex]){
+//                currentIndex++;
+//            }else{
+//                lastIndex++;
+//                System.out.println("前：nums[lastIndex]:"+nums[lastIndex]+ " nums[currentIndex]:"+nums[currentIndex]);
+//                nums[lastIndex]=nums[currentIndex];
+//                System.out.println("后：nums[lastIndex]:"+nums[lastIndex]+ " nums[currentIndex]:"+nums[currentIndex]);
+//                StringBuilder builder = new StringBuilder();
+//                for (int num : nums) {
+//                    builder.append(num+",");
+//                }
+//                System.out.println(builder.toString());
+//                currentIndex++;
+//            }
+//        }
+//        return lastIndex+1;
+//    }
+
+    private ListNode sortListNode(ListNode listNode1, ListNode listNode2){
+        if(Objects.isNull(listNode1)){
+            return listNode2;
+        }
+
+        if(Objects.isNull(listNode2)){
+            return listNode1;
+        }
+
+        ListNode tmpListNode = new ListNode(-1);
+        while(Objects.nonNull(listNode1) && Objects.nonNull(listNode2)){
+            if(listNode1.getVal() > listNode2.getVal()){
+                tmpListNode.setNext(listNode2);
+                listNode2 = listNode2.next;
+            }else if(listNode1.getVal() < listNode2.getVal()){
+                tmpListNode.setNext(listNode1);
+                listNode1 = listNode1.next;
+            }
+        }
+        return tmpListNode;
+    }
+
+    private ListNode sortListNode1(ListNode list1, ListNode list2){
+        if(list1 == null){
+            return list2;
+        }
+        if(list2 == null){
+            return list1;
+        }
+        ListNode node = new ListNode(-1);  //定义新节点用于形成新链表
+        ListNode temp = node;   //用来遍历
+        while(list1 != null && list2 != null){
+            if(list2.val >= list1.val){   //标胶两条链表的初始节点；哪个节点小就拼接到node上，并且该链表后移一位
+                temp.next = list1;
+                list1 = list1.next;
+            }else if(list2.val < list1.val){
+                temp.next = list2;
+                list2 = list2.next;
+            }
+            temp = temp.next;   //node后移一位，指向尾结点
+            if(list1 == null){  //当某条链表结束了，就让node.next指向另一条链表的空余，因为是升序的嘛
+                temp.next = list2;
+                return node.next;
+            }
+            if(list2 == null){
+                temp.next = list1;
+                return node.next;   //返回初始节点
+            }
+        }
+        return node.next;
     }
 
     @Test
@@ -96,15 +244,6 @@ public class LeeCodeTest {
 
         System.out.println("ZoneOffset.of(\"+8\"):     "+format3);
     }
-
-    @Test
-    public void test8(){
-
-    }
-
-//    public ListNode mergeTwoLists(ListNode node1, ListNode node2) {
-//        int val = node1.getVal();
-//    }
 
 
     public void addNodeByIdAsc(StudentNode headNode, StudentNode newStudentNode){
@@ -444,6 +583,7 @@ class ListNode {
         this.next = next;
     }
 }
+
 
 @Data
 class StudentNode {

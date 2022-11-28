@@ -3,9 +3,7 @@ package com.prj.proxy;
 import com.prj.service.Hello;
 import com.prj.service.impl.HelloImpl;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
+import java.lang.reflect.*;
 
 /**
  * @PackageName: com.prj.proxy
@@ -47,11 +45,24 @@ public class DynamicProxy implements InvocationHandler {
         );
     }
 
-    public static void main(String[] args) {
-        Hello hello = new HelloImpl();
-        DynamicProxy dynamicProxy = new DynamicProxy(hello);
-        Hello helloProxy = dynamicProxy.getProxy();
-        helloProxy.say("prj");
 
+
+    public static void main(String[] args) throws NoSuchMethodException, IllegalAccessException, InvocationTargetException, InstantiationException {
+//        Hello hello = new HelloImpl();
+//        DynamicProxy dynamicProxy = new DynamicProxy(hello);
+//        Hello helloProxy = dynamicProxy.getProxy();
+//        helloProxy.say("prj");
+
+        Class proxyClass = Proxy.getProxyClass(Hello.class.getClassLoader(), Hello.class);
+        Constructor constructor = proxyClass.getConstructor(InvocationHandler.class);
+        Hello he = (Hello)constructor.newInstance(new InvocationHandler() {
+            @Override
+            public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                HelloImpl hello = new HelloImpl();
+                Object result = method.invoke(hello, args);
+                return result;
+            }
+        });
+        he.say("prj");
     }
 }
