@@ -1,14 +1,10 @@
 
 {
 Ksecuritydemo1/src/main/java/com/prj/controller/SecurityDemo1Controller.java,2\0\2024f9ae8ed1f9a9a45006fb2392aab290c3f417
-G
-redisDemo/redisDemo.iml,6\a\6a5f3c1ed5a73692a47b773132bd30611cf0c91e
 O
 securitydemo1/securitydemo1.iml,f\5\f5b563c123c228127f42beb4b4a6a0ff3a02c7f8
 M
 computerBase/computerBase.iml,d\b\dbc45ec706873a9f2a8e924f53be3b282c216d6d
-A
-MyTest/MyTest.iml,d\4\d472d894db72fa13b1c22949bc375a345f43bb59
 d
 4MyTest/src/main/java/com/prj/config/EventConfig.java,a\0\a0c33ffdc5d5cd725948e030938a2288faa63d1b
 Q
@@ -25,12 +21,8 @@ D
 computerBase/pom.xml,d\e\deb29c7b0a3b6e7b90c527fef7ce0d4a714d8cc3
 Z
 *computerBase/src/main/java/com/prj/zj.java,8\a\8a4719aeb53a705bf6a1ceb9d4657f5ee729156e
-a
-1spring-validation-demo/spring-validation-demo.iml,9\5\95a4b6f5433d1942c8c76a2ab0b0e604951e6070
 q
 Asecuritydemo1/src/main/java/com/prj/SecurityDemo1Application.java,c\2\c2c98db16807ecabab60ada1772f59fa7adbe169
-G
-java8Demo/java8Demo.iml,7\8\78e39ea113b656dcbaac5fc6d06a4ee61c900304
 F
 swagger-common/pom.xml,9\a\9af82d01526c237e9dc2daa07257a61796a84adb
 n
@@ -69,8 +61,6 @@ z
 Jspring-validation-demo/src/main/java/com/prj/binder/DateConvertBinder.java,8\4\84bb5abd247ad1f64a4eeabb3e7765b747e76a46
 s
 Cbase/src/main/java/com/piesat/exception/GlobalExceptionHandler.java,e\0\e0582c35b9d5563cae70cc7031bf0142a8ab3ecd
-=
-base/base.iml,7\b\7b1524451eb03acc91c0180dc96e8a91112f7cb1
 <
 base/pom.xml,6\9\6938ebfea762ce0c7ba0c2da2004eb53baa6e9a4
 N
@@ -83,8 +73,6 @@ r
 Bspring-validation-demo/src/main/java/com/prj/pojo/dto/UserDTO.java,e\6\e678cd20aea16ea7df6082b54db8f2f2909fac9a
 D
 nacos-common/pom.xml,4\f\4f9e6ffbfe4fad6242ea8ca4758c314fee802193
-n
->swagger-common/src/main/java/com/prj/config/SwaggerConfig.java,1\d\1d95fe7c2bd5d1d30eb9a6722449e3dfa798e541
 c
 3MyTest/src/main/java/com/prj/MyTestApplication.java,d\7\d70385f2483e08edb2501081226341d16507d807
 e
@@ -135,3 +123,7 @@ e
 	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+A
+redisDemo/pom.xml,7\a\7adb6399e9ad9cf312b83ce35449822eba7f7f91
+>
+MyTest/pom.xml,4\1\410ce88c1f96588748d5037da1675a88f9737368

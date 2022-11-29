@@ -109,6 +109,98 @@ public class LeeCodeTest {
         System.out.println("数组最终长度：" + removeElement1(nums, val));
     }
 
+    /**
+     * 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
+     * <p>
+     * 请必须使用时间复杂度为 O(log n) 的算法。
+     * <p>
+     * 来源：力扣（LeetCode）
+     * 链接：https://leetcode.cn/problems/search-insert-position
+     * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+     */
+    @Test
+    public void test10() {
+        int[] nums = {1,3,5,6};
+        int target = 0;
+        System.out.println(searchInsert(nums, target));
+    }
+
+    public int searchInsert(int[] nums, int target) {
+        int length = nums.length;
+        int halfNum;
+        if (length % 2 != 0) {
+            halfNum = (length / 2) + 1;
+        } else {
+            halfNum = length / 2;
+        }
+
+        if (length == 1) {
+            if (nums[0] != target) {
+                if (nums[0] > target) {
+                    return 0;
+                } else {
+                    return 1;
+                }
+            } else {
+                return 0;
+            }
+        }
+
+        int half = halfNum;
+        int currentHalf = nums[half];
+        if (currentHalf == target) {
+            return half;
+        } else if (currentHalf < target) {
+            int[] afterHalfArray = new int[length - half];
+            System.arraycopy(nums, half, afterHalfArray, 0, length - half);
+            half = searchInsert(afterHalfArray, target);
+            return half + halfNum;
+        } else {
+            int[] beforeHalfArray = new int[half];
+            System.arraycopy(nums, 0, beforeHalfArray, 0, half);
+            return searchInsert(beforeHalfArray, target);
+        }
+    }
+
+
+    public int searchInsert1(int[] nums, int target) {
+        int length = nums.length;
+        int halfNum;
+        if (length % 2 != 0) {
+            halfNum = (length / 2) + 1;
+        } else {
+            halfNum = length / 2;
+        }
+
+        if (length == 1) {
+            int[] tmps = null;
+            if (nums[0] != target) {
+                if (nums[0] > target) {
+                    tmps = new int[]{target, nums[0]};
+                } else {
+                    tmps = new int[]{nums[0], target};
+                }
+            } else {
+                return 0;
+            }
+            return halfNum;
+        }
+
+        int half = halfNum;
+        int currentHalf = nums[half];
+        if (currentHalf == target) {
+            return half;
+        } else if (currentHalf < target) {
+            int[] afterHalfArray = new int[length - half];
+            System.arraycopy(nums, half, afterHalfArray, 0, length - half);
+            half = searchInsert(afterHalfArray, target);
+            return half + halfNum;
+        } else {
+            int[] beforeHalfArray = new int[half];
+            System.arraycopy(nums, 0, beforeHalfArray, 0, half);
+            return searchInsert(beforeHalfArray, target);
+        }
+    }
 
     public int removeElement2(int[] nums, int val) {
         if (nums == null || nums.length == 0)
@@ -125,15 +217,15 @@ public class LeeCodeTest {
     }
 
     public int removeElement1(int[] nums, int val) {
-       if(nums.length<1){
-           return nums.length;
-       }
+        if (nums.length < 1) {
+            return nums.length;
+        }
 
-       int j = 0;
+        int j = 0;
         for (int i = 0; i < nums.length; i++) {
             int tmpNum = nums[i];
-            if(tmpNum!=val){
-                nums[j]=nums[i];
+            if (tmpNum != val) {
+                nums[j] = nums[i];
                 j++;
             }
         }
