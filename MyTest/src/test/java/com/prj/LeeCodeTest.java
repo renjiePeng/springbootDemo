@@ -75,31 +75,86 @@ public class LeeCodeTest {
      * 另一个是存储下一个结点地址的指针域。
      */
     @Test
-    public void test6(){
+    public void test6() {
         StudentNode headNode = new StudentNode(0, "");
 
     }
 
     @Test
-    public void test7(){
+    public void test7() {
         long currentTimeMillis = System.currentTimeMillis();
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         String format1 = LocalDateTime.ofInstant(Instant.ofEpochMilli(currentTimeMillis), ZoneOffset.UTC).format(dateTimeFormatter);
 
-        System.out.println("ZoneOffset.UTC:       "+format1);
+        System.out.println("ZoneOffset.UTC:       " + format1);
 
         String format2 = LocalDateTime.ofInstant(Instant.ofEpochMilli(currentTimeMillis), ZoneId.of("Asia/Shanghai")).format(dateTimeFormatter);
 
-        System.out.println("ZoneId.systemDefault(): "+format2);
+        System.out.println("ZoneId.systemDefault(): " + format2);
 
         String format3 = LocalDateTime.ofInstant(Instant.ofEpochMilli(currentTimeMillis), ZoneOffset.of("+8")).format(dateTimeFormatter);
 
-        System.out.println("ZoneOffset.of(\"+8\"):     "+format3);
+        System.out.println("ZoneOffset.of(\"+8\"):     " + format3);
     }
 
     @Test
-    public void test8(){
+    public void test8() {
 
+    }
+
+    @Test
+    public void test9() {
+        int[] nums = {1};
+        int val = 1;
+        System.out.println("数组最终长度：" + removeElement1(nums, val));
+    }
+
+
+    public int removeElement2(int[] nums, int val) {
+        if (nums == null || nums.length == 0)
+            return 0;
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int tmpNum = nums[i];
+            if (tmpNum != val) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
+    public int removeElement1(int[] nums, int val) {
+       if(nums.length<1){
+           return nums.length;
+       }
+
+       int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int tmpNum = nums[i];
+            if(tmpNum!=val){
+                nums[j]=nums[i];
+                j++;
+            }
+        }
+        return j;
+    }
+
+    public int removeElement(int[] nums, int val) {
+        if (nums.length <= 1) {
+            return nums.length;
+        }
+
+        int i = -1;
+        int j = 0;
+        while (i < nums.length - 1) {
+            i++;
+            if (nums[i] == val) {
+                continue;
+            }
+            j++;
+        }
+        return j;
     }
 
 //    public ListNode mergeTwoLists(ListNode node1, ListNode node2) {
@@ -107,20 +162,20 @@ public class LeeCodeTest {
 //    }
 
 
-    public void addNodeByIdAsc(StudentNode headNode, StudentNode newStudentNode){
+    public void addNodeByIdAsc(StudentNode headNode, StudentNode newStudentNode) {
         StudentNode tmpNode = headNode;
-        while(true){
-            if(Objects.isNull(tmpNode.getNextStudent())){
+        while (true) {
+            if (Objects.isNull(tmpNode.getNextStudent())) {
                 tmpNode.setNextStudent(newStudentNode);
                 break;
             }
 
             int newStudentNodeId = newStudentNode.getId();
-            if(tmpNode.getNextStudent().getId() == newStudentNodeId){
+            if (tmpNode.getNextStudent().getId() == newStudentNodeId) {
                 break;
             }
 
-            if(tmpNode.getNextStudent().getId()> newStudentNodeId){
+            if (tmpNode.getNextStudent().getId() > newStudentNodeId) {
                 newStudentNode.setNextStudent(tmpNode.getNextStudent());
                 tmpNode.setNextStudent(newStudentNode);
                 break;
@@ -130,10 +185,10 @@ public class LeeCodeTest {
         }
     }
 
-    public void addNodeEnd(StudentNode newStudentNode){
+    public void addNodeEnd(StudentNode newStudentNode) {
         StudentNode tmpNode = newStudentNode;
-        while (true){
-            if(Objects.isNull(tmpNode.getNextStudent())){
+        while (true) {
+            if (Objects.isNull(tmpNode.getNextStudent())) {
                 break;
             }
             //将tmpNode后移
@@ -144,20 +199,20 @@ public class LeeCodeTest {
         tmpNode.setNextStudent(newStudentNode);
     }
 
-    public boolean isValid(String s){
-        if(s.length()%2!=0){
+    public boolean isValid(String s) {
+        if (s.length() % 2 != 0) {
             return false;
         }
 
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
-            if(c=='('){
+            if (c == '(') {
                 stack.push(')');
-            }else if(c=='['){
+            } else if (c == '[') {
                 stack.push(']');
-            }else if(c=='{'){
+            } else if (c == '{') {
                 stack.push('}');
-            }else if(stack.isEmpty() || c!=stack.pop()){
+            } else if (stack.isEmpty() || c != stack.pop()) {
                 return false;
             }
         }
@@ -165,11 +220,11 @@ public class LeeCodeTest {
     }
 
     public boolean isValid2(String s) {
-        if(s.length()==0){
+        if (s.length() == 0) {
             return true;
         }
 
-        if(s.length()==1){
+        if (s.length() == 1) {
             return false;
         }
 
@@ -177,27 +232,27 @@ public class LeeCodeTest {
         char lastChar = 0;
         for (int i = 0; i < s.length(); i++) {
             char currentChar = s.charAt(i);
-            if(i>0) {
-                lastChar = s.charAt(i-1);
+            if (i > 0) {
+                lastChar = s.charAt(i - 1);
             }
-            switch (currentChar){
+            switch (currentChar) {
                 case '(':
                 case '[':
                 case '{':
                     flag = false;
                     break;
                 case ')':
-                    if(lastChar=='(') {
+                    if (lastChar == '(') {
                         flag = true;
                     }
                     break;
                 case ']':
-                    if(lastChar=='[') {
+                    if (lastChar == '[') {
                         flag = true;
                     }
                     break;
                 case '}':
-                    if(lastChar=='{') {
+                    if (lastChar == '{') {
                         flag = true;
                     }
                     break;
@@ -207,7 +262,7 @@ public class LeeCodeTest {
     }
 
     public boolean isValid1(String s) {
-        if(s.length()==0){
+        if (s.length() == 0) {
             return true;
         }
 
@@ -216,24 +271,24 @@ public class LeeCodeTest {
         int leftBigsymbol = 0;
         for (int i = 0; i < s.length(); i++) {
             char currentChar = s.charAt(i);
-            switch (currentChar){
+            switch (currentChar) {
                 case '(':
-                    leftSmailsymbol+=1;
+                    leftSmailsymbol += 1;
                     break;
                 case '[':
-                    leftmediumsymbol+=1;
+                    leftmediumsymbol += 1;
                     break;
                 case '{':
-                    leftBigsymbol+=1;
+                    leftBigsymbol += 1;
                     break;
                 case ')':
-                    leftSmailsymbol-=1;
+                    leftSmailsymbol -= 1;
                     break;
                 case ']':
-                    leftmediumsymbol-=1;
+                    leftmediumsymbol -= 1;
                     break;
                 case '}':
-                    leftBigsymbol-=1;
+                    leftBigsymbol -= 1;
                     break;
             }
         }
@@ -245,6 +300,7 @@ public class LeeCodeTest {
      * 2、获取数组第一个元素
      * 3、再挨个遍历每个单词，与后面的元素用startWith判断是否为开头
      * 4、如果都是以该单词开头的，添加到缓存中，否则return。
+     *
      * @param strs 原始数据
      * @return 公共前缀
      */
@@ -254,7 +310,7 @@ public class LeeCodeTest {
         }
         String cacheStr = "";
         String firstStr = strs[0];
-        if(strs.length==1){
+        if (strs.length == 1) {
             return strs[0];
         }
         for (int i = 0; i < firstStr.length(); i++) {

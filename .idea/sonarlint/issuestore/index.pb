@@ -17,8 +17,6 @@ Q
 ,.idea/inspectionProfiles/Project_Default.xml,4\9\496a238a6afa168dbaf6efd37bb459331589579c
 g
 7redisDemo/src/main/java/com/prj/config/RedisConfig.java,5\7\5701ee9ab5eae9be276c8be115516af0c081453b
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 o
 ?redisDemo/src/main/java/com/prj/controller/RedisController.java,3\3\33e6dc20f682d806f0295961f03e7b8481fe8d39
 E
@@ -37,8 +35,6 @@ F
 swagger-common/pom.xml,9\a\9af82d01526c237e9dc2daa07257a61796a84adb
 n
 >base/src/main/java/com/piesat/exception/BusinessException.java,f\3\f37e471ec131fb833bf52715481ed02a6f74c808
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 o
 ?spring-validation-demo/src/main/java/com/prj/common/Result.java,1\c\1c5c644714c512ff55dd74fa244022c11e3293d8
 x
@@ -81,8 +77,6 @@ N
 spring-validation-demo/pom.xml,2\4\246a89b77376f0b583673dd081d68888129a367b
 i
 9redisDemo/src/main/java/com/prj/RedisDemoApplication.java,b\c\bcc303b337840100fe32c14cdf90c5b20c1ff438
-A
-redisDemo/pom.xml,7\a\7adb6399e9ad9cf312b83ce35449822eba7f7f91
 {
 Kspring-validation-demo/src/main/java/com/prj/controller/UserController.java,6\a\6a25a5489eb8d8bf413644355974ec881ea5d3b5
 r
@@ -123,3 +117,21 @@ n
 >MyTest/src/main/java/com/prj/publisher/DemoEventPublisher.java,8\5\85bb50d32216a69de943d4e34c5e3b32b377b148
 p
 @MyTest/src/main/java/com/prj/controller/PublisherController.java,0\c\0cc346fcd4f1e7e98afdb8cef70a4c53b5d3af42
+h
+8MyTest/src/main/java/com/prj/convert/UserDTOConvert.java,4\3\43a26aec27c7f7fea006cc75231c25472e3ea2c6
+`
+0MyTest/src/main/java/com/prj/pojo/bo/UserBO.java,b\5\b5e0607ca9a623c1f1cdff73fe0bfeb4cfabba02
+h
+8MyTest/src/main/java/com/prj/convert/TimeStrConvert.java,c\5\c5181d3267c24b13b025130859f4836f5cf240c9
+b
+2MyTest/src/main/java/com/prj/pojo/dto/UserDTO.java,8\b\8b05a1c93b5535e119a300667ddd16aa823ba29a
+e
+5MyTest/src/main/java/com/prj/convert/UserConvert.java,2\5\254abe2ea48d15bb1377258c302ca518cbd54881
+b
+2MyTest/src/main/java/com/prj/pojo/entity/User.java,d\7\d7d07fc5b75e1a68993316074729a33e73bee936
+e
+5MyTest/src/main/java/com/prj/pojo/entity/Student.java,0\5\052609be3eda6ba17bd483ea49ace887b0a90194
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

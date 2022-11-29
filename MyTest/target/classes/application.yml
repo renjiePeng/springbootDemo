@@ -24,3 +24,7 @@ spring:
         group: my
 swagger:
   title: 测试
+
+feign:
+  okhttp:
+    enable: true
