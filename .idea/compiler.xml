@@ -10,6 +10,7 @@
         <module name="spring-validation-demo" />
         <module name="securitydemo1" />
         <module name="swagger-common" />
+        <module name="springboot-source-analysis" />
         <module name="nacos-common" />
         <module name="MyTest" />
         <module name="java8Demo" />
@@ -28,6 +29,7 @@
       <module name="redisDemo" options="-parameters" />
       <module name="securitydemo1" options="-parameters" />
       <module name="spring-validation-demo" options="-parameters" />
+      <module name="springboot-source-analysis" options="-parameters" />
       <module name="swagger-common" options="-parameters" />
     </option>
   </component>
