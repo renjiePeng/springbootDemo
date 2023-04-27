@@ -23,4 +23,5 @@ public class StudentController {
         log.info("student:{}",student.toString());
         return student.toString();
     }
+
 }
