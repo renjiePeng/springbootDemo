@@ -11,6 +11,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/BioDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/NettyDemo/pom.xml" />
       </list>
     </option>
   </component>

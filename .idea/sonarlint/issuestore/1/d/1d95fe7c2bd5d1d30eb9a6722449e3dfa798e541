@@ -1,0 +1,29 @@
+
+Q
+java:S3740j"/Provide the parametrized type for this generic.(ÂíâÍÿÿÿÿÿ8¶¡§½Å0
+w
+java:S11044"ZMake CONTROLLER_URL a static final constant or non-public and provide accessors if needed.(°‡ĞÓ8Ä¡§½Å0
+|
+java:S1104="_Make SWAGGER_DESCRIPTION a static final constant or non-public and provide accessors if needed.(ˆÌ„8Ô¡§½Å0
+x
+java:S1104A"[Make SWAGGER_VERSION a static final constant or non-public and provide accessors if needed.(¬ƒÈå8ã¡§½Å0
+Q
+java:S14444"4Make this "public static CONTROLLER_URL" field final(°‡ĞÓ8ò¡§½Å0
+V
+java:S1444="9Make this "public static SWAGGER_DESCRIPTION" field final(ˆÌ„8¢§½Å0
+R
+java:S1444A"5Make this "public static SWAGGER_VERSION" field final(¬ƒÈå8¢§½Å0
+~
+java:S2629T"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ü“›èıÿÿÿÿ8Ÿ¢§½Å0
+v
+java:S30084"YRename this field "CONTROLLER_URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°‡ĞÓ8½¢§½Å0
+{
+java:S3008="^Rename this field "SWAGGER_DESCRIPTION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÌ„8Ì¢§½Å0
+w
+java:S3008A"ZRename this field "SWAGGER_VERSION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬ƒÈå8Û¢§½Å0
+b
+java:S1124E"EReorder the modifiers to comply with the Java Language Specification.(—ş—¦8ê¢§½Å0
+c
+java:S3457T"AFormat specifiers should be used instead of string concatenation.(Ü“›èıÿÿÿÿ8ù¢§½Å0
+…
+java:S1128"cRemove this unused import 'org.springframework.boot.autoconfigure.condition.ConditionalOnProperty'.(Á™©¾üÿÿÿÿ8ˆ£§½Å0

@@ -17,6 +17,7 @@
         <module name="java-concurrencyin-practice" />
         <module name="redisDemo" />
         <module name="base" />
+        <module name="BioDemo" />
       </profile>
     </annotationProcessing>
   </component>

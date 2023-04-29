@@ -1,0 +1,7 @@
+
+A
+java:S2160"+Override the "equals" method in this class.(ÁŒŸ›
+i
+java:S29758"SRemove this "clone" implementation; use a copy constructor or copy factory instead.(Ž²ÈÞ
+^
+java:S11828"HUse super.clone() to create and seed the cloned instance to be returned.(Ž²ÈÞ

@@ -1,0 +1,15 @@
+
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(²„È8¤³£ËÉ0
+Z	java:S106;"9Replace this use of System.out or System.err by a logger.(«Ôü¾ÿÿÿÿÿ8¥³£ËÉ0
+U	java:S106E"9Replace this use of System.out or System.err by a logger.(ê×¼©8¦³£ËÉ0
+U	java:S106L"9Replace this use of System.out or System.err by a logger.(ê×¼©8§³£ËÉ0
+Z	java:S106U"9Replace this use of System.out or System.err by a logger.(«æÍüÿÿÿÿ8§³£ËÉ0
+Z	java:S106c"9Replace this use of System.out or System.err by a logger.(«æÍüÿÿÿÿ8¨³£ËÉ0
+R
+java:S1128"5Remove this unused import 'com.prj.event.OrderEvent'.(›‚‹Î8ƒñÑèÉ0
+h
+java:S1128"KRemove this unused import 'org.springframework.context.ApplicationContext'.(»Ô»¿8ƒñÑèÉ0
+X
+java:S1128"6Remove this unused import 'javax.annotation.Nullable'.(—å¨Íûÿÿÿÿ8„ñÑèÉ0
+c
+java:S1128"FRemove this unused import 'java.util.concurrent.CopyOnWriteArrayList'.(ı¦ü8„ñÑèÉ0
