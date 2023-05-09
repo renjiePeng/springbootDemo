@@ -1,11 +1,9 @@
-package com.prj.client;
-
-import com.prj.server.MultiplexerTimeServer;
+package com.prj.echo.client;
 
 import java.util.Objects;
 
 /**
- * @Description
+ * @Description 使用java原生的Nio
  * @Author pengrj
  * @Date 2023/5/5 18:41
  * @Version 1.0

@@ -1,4 +1,4 @@
-package com.prj.server;
+package com.prj.echo.server;
 
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;

@@ -1,4 +1,4 @@
-package com.prj.client;
+package com.prj.echo.client;
 
 import java.util.Objects;
 

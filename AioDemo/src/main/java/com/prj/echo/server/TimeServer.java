@@ -1,11 +1,11 @@
-package com.prj.server;
+package com.prj.echo.server;
 
 import java.util.Objects;
 
 /**
  * @Description
  * @Author pengrj
- * @Date 2023/5/5 16:42
+ * @Date 2023/5/6 19:12
  * @Version 1.0
  **/
 public class TimeServer {
@@ -19,7 +19,7 @@ public class TimeServer {
             }
         }
 
-        MultiplexerTimeServer timeServer = new MultiplexerTimeServer(port);
-        new Thread(timeServer,"NIO-MultiplexerTimeServer-001").start();
+        AsyncTimeServerHandler timeServerHandler = new AsyncTimeServerHandler(port);
+        new Thread(timeServerHandler,"AIO-AsyncTimeServerHandler-001").start();
     }
 }
