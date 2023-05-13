@@ -1,4 +1,4 @@
-package com.prj.server;
+package com.prj.echo.server;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
