@@ -1,10 +1,6 @@
 
 {
 Ksecuritydemo1/src/main/java/com/prj/controller/SecurityDemo1Controller.java,2\0\2024f9ae8ed1f9a9a45006fb2392aab290c3f417
-O
-securitydemo1/securitydemo1.iml,f\5\f5b563c123c228127f42beb4b4a6a0ff3a02c7f8
-M
-computerBase/computerBase.iml,d\b\dbc45ec706873a9f2a8e924f53be3b282c216d6d
 d
 4MyTest/src/main/java/com/prj/config/EventConfig.java,a\0\a0c33ffdc5d5cd725948e030938a2288faa63d1b
 \
@@ -83,3 +79,7 @@ h
 8MyTest/src/main/java/com/prj/service/impl/SequenceB.java,7\0\70c328d203e81b4f3c72aad0c431cbda3aed96ab
 k
 ;MyTest/src/main/java/com/prj/service/impl/ClientThread.java,e\d\ed822d96e0de6d90a91cd6ade02e7e3b76fe2ad0
+m
+=NettyDemo/src/main/java/com/prj/client/EchoClientHandler.java,4\d\4d2842e2a98ee108041e17f13cf8102d3e011cb6
+_
+/NettyDemo/src/main/java/com/prj/EchoClient.java,5\1\518c6d015f8ec6042d2817268c5c616c8caf5e78

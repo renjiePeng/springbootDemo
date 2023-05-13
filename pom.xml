@@ -16,7 +16,8 @@
         <module>base</module>
         <module>springboot-source-analysis</module>
         <module>java-concurrencyin-practice</module>
-        <module>TimeDemo1</module>
+        <module>NioDemo</module>
+        <module>AioDemo</module>
     </modules>
 
     <parent>
