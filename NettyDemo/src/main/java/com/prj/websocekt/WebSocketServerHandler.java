@@ -56,7 +56,7 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
         }
         //本例程仅支持文本消息，不支持二进制消息，
         if(!(frame instanceof TextWebSocketFrame)){
-            throw new UnsupportedOperationException(String.format("%s frame types not supported",frame.getClass().getClass()));
+            throw new UnsupportedOperationException(String.format("%s frame types not supported",frame.getClass().getName()));
         }
 
         //返回应答消息
@@ -70,7 +70,8 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler<Object> 
     }
 
     private void handleHttpRequest(ChannelHandlerContext ctx, FullHttpRequest req) {
-        if (req.getDecoderResult().isSuccess() || (Objects.equals("websocket", req.headers().get("Upgrade")))) {
+        //如果HTTP解码失败，返回Http异常
+        if (!req.getDecoderResult().isSuccess() || !(Objects.equals("websocket", req.headers().get("Upgrade")))) {
             sendHttpResponse(ctx, req, new DefaultFullHttpResponse(HttpVersion.HTTP_1_1, HttpResponseStatus.BAD_REQUEST));
             return;
         }
