@@ -1,0 +1,24 @@
+server:
+  port: 8084
+  servlet:
+    context-path: /require
+spring:
+  profiles:
+#    include: base
+    active: bjdev
+  main:
+    allow-circular-references: true
+  application:
+    name: yk-require
+  datasource:
+    type: org.postgresql.ds.PGSimpleDataSource
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://10.2.12.168:5432/postgres?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: postgres
+    password: 123456
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

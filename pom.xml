@@ -18,6 +18,7 @@
         <module>java-concurrencyin-practice</module>
         <module>NioDemo</module>
         <module>AioDemo</module>
+        <module>TransactionTest</module>
     </modules>
 
     <parent>
@@ -35,6 +36,9 @@
         <nacos.cloud.discovery.version>2021.0.1.0</nacos.cloud.discovery.version>
         <spring.cloud.dependencies.version>2021.0.1</spring.cloud.dependencies.version>
         <fastJson.version>1.2.70</fastJson.version>
+        <postgresql.version>42.3.3</postgresql.version>
+        <mybatis-plus.version>3.5.2</mybatis-plus.version>
+        <hutool.version>5.6.6</hutool.version>
     </properties>
 
     <dependencies>
@@ -74,14 +78,37 @@
             <version>${fastJson.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>${mybatis-version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+            <version>${postgresql.version}</version>
+        </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>org.mybatis.spring.boot</groupId>-->
-<!--            <artifactId>mybatis-spring-boot-starter</artifactId>-->
-<!--            <version>${mybatis-version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-extension</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <pluginRepositories>

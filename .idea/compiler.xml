@@ -2,6 +2,7 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -10,6 +11,7 @@
         <module name="securitydemo1" />
         <module name="swagger-common" />
         <module name="nacos-common" />
+        <module name="TransactionTest" />
         <module name="MyTest" />
         <module name="java-concurrencyin-practice" />
         <module name="BioDemo" />
@@ -28,6 +30,7 @@
       <module name="AioDemo" options="-parameters" />
       <module name="MyTest" options="-parameters" />
       <module name="NioDemo" options="-parameters" />
+      <module name="TransactionTest" options="-parameters" />
       <module name="base" options="-parameters" />
       <module name="computerBase" options="-parameters" />
       <module name="java-concurrencyin-practice" options="-parameters" />
