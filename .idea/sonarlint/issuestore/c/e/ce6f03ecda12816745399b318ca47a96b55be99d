@@ -1,0 +1,41 @@
+
+C
+java:S1604="(Make this anonymous inner class a lambda(«¹ºðøÿÿÿÿ
+>
+java:S1604Q"(Make this anonymous inner class a lambda(¬êÓ²
+=
+java:S1604^"(Make this anonymous inner class a lambda(ô§ê
+7
+java:S1170"!Make this final field static too.(€–Àí
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ðž‡üþÿÿÿÿ
+2
+java:S1116&"Remove this empty statement.(–‹éÚ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(çŸýÌþÿÿÿÿ
+S	java:S1068"9Replace this use of System.out or System.err by a logger.(°×ž•ÿÿÿÿÿ
+N	java:S106E"9Replace this use of System.out or System.err by a logger.(áÔÑ÷
+S	java:S106H"9Replace this use of System.out or System.err by a logger.(•ÄõÒÿÿÿÿÿ
+N	java:S106I"9Replace this use of System.out or System.err by a logger.(áÔÑ÷
+S	java:S106T"9Replace this use of System.out or System.err by a logger.(ŸÙÑÁüÿÿÿÿ
+N	java:S106W"9Replace this use of System.out or System.err by a logger.(ÊÓáö
+S	java:S106a"9Replace this use of System.out or System.err by a logger.(­èâ úÿÿÿÿ
+S	java:S106e"9Replace this use of System.out or System.err by a logger.(òÒ¤›üÿÿÿÿ
+v
+java:S1217f"`Call the method Thread.start() to execute the content of the run() method in a dedicated thread.(—ú÷Ú
+{
+java:S1217g"`Call the method Thread.start() to execute the content of the run() method in a dedicated thread.(½ÔŸùúÿÿÿÿ
+O
+java:S1854u"9Remove this useless assignment to local variable "value".(â—ìç
+O
+java:S1117u"9Rename "value" which hides the field declared at line 16.(â—ìç
+@
+java:S1481u"*Remove this unused "value" local variable.(â—ìç
+<
+java:S1170w"!Make this final field static too.(ò»®ùÿÿÿÿ
+T
+java:S1854z"9Remove this useless assignment to local variable "value".(ïÕÇúÿÿÿÿ
+U
+java:S1117z":Rename "value" which hides the field declared at line 119.(ïÕÇúÿÿÿÿ
+E
+java:S1481z"*Remove this unused "value" local variable.(ïÕÇúÿÿÿÿ
+N	java:S106{"9Replace this use of System.out or System.err by a logger.(–ûÅ¿
+R	java:S125Œ"<This block of commented-out lines of code should be removed.(‡ì¤ì
