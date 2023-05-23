@@ -8,18 +8,15 @@ import com.prj.annotation.validator.Update;
 import com.prj.annotation.validator.ValidationList;
 import com.prj.common.Result;
 import com.prj.pojo.dto.UserDTO;
-import com.prj.pojo.entity.User;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.mvc.annotation.ModelAndViewResolver;
 
 import javax.validation.ConstraintViolation;
-import javax.validation.Valid;
 import javax.validation.constraints.Min;
-import java.util.List;
 import java.util.Set;
 
 /**
@@ -31,12 +28,13 @@ import java.util.Set;
 @RestController
 @RequestMapping(value = "/user")
 @Validated
+@Slf4j
 public class UserController {
 
     @ApiOperation("新增用户")
     @PostMapping(value = "/insertUser")
     public String insertUser(@RequestBody @Validated(Add.class) UserDTO user) {
-        System.out.println(user.toString());
+        log.info(user.toString());
         return user.toString();
     }
 
